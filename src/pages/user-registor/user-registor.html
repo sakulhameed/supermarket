@@ -1,0 +1,47 @@
+<!--
+  Generated template for the UserRegistorPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>user-registor</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    
+     <form [formGroup]="registorform" (ngSubmit)="onSubmit(registorform.value)">
+        <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input type="text" formControlName="username" name="username"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Mobile No</ion-label>
+            <ion-input type="text" formControlName="mobile" name="mobile"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Email Id</ion-label>
+            <ion-input type="email" formControlName="email" name="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" formControlName="password" name="password"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Re-Password</ion-label>
+            <ion-input type="password" formControlName="repassword" name="repassword"></ion-input>
+        </ion-item>
+        <div padding>
+         <button ion-button type="submit" block [disabled]="!registorform.valid">Sign Up</button>
+        </div>
+    </form>
+
+    <div padding>
+      <button ion-button color="primary" block (click)="signup();">Sign In</button>
+    </div>
+</ion-content>
